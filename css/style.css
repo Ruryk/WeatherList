@@ -1,0 +1,146 @@
+
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-blend-mode: multiply;
+    background: rgb(38,134,205);
+    background: radial-gradient(circle, rgba(38,134,205,1) 35%, rgba(8,40,159,1) 100%);
+    font-size: 1.1vw;
+    height: 100%;
+} 
+a{
+    text-decoration: none;
+}
+a:link{
+    color: white;
+}
+a:visited{
+    color: white;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: white;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    z-index: 1000;
+    color: white;
+}
+.header {
+    width: 100%;
+    box-sizing: content-box;
+}
+.content {
+    width: 100%;
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+.form {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+          -webkit-box-align: baseline;
+                  align-items: baseline;
+  padding: 5px;
+}
+.form input{
+    width: 15vw;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+}
+
+/*weather card*/
+.card {
+  display: grid;
+  -webkit-box-pack: center;
+          justify-content: center;
+          grid-template-columns: 90%;
+}
+.card .headCard {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+  background-image: url(../img/seasons.jpg);
+}
+.card .headCard .center {
+  display: grid;
+  grid-template-columns: 100%;
+  -webkit-box-pack: center;
+        justify-items: center;
+}
+.card .headCard h1 {
+  margin-bottom: 5px;
+  font-weight: 200;
+  color: #fff;
+  font-size: 54px;
+  font-family: sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+.card .headCard h3 {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 200;
+}
+.card .details {
+  background: #fff;
+  margin-top: -15px;
+  padding: 0 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0 7px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 12px 27px rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+.card .details > h2 {
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 15px;
+  color: rgb(120,120,120);
+}
+.card .details > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.card .details > ul > li {
+  position: relative;
+  margin-bottom: 15px;
+  color: #666;
+}
+.card .details > ul > li:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  display: block;
+  background-color: #eee;
+  height: 1px;
+  width: 100%;
+}
+
+.card img {
+     width: 50px;
+     height: auto; 
+}
+.card h3 {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    
+}
+
+
+
