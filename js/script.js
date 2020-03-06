@@ -48,9 +48,8 @@ function getWeather() {
 
 //date 
 
-$(function () {
-
-    $('#inputcountry').autocomplete({
-        source: countries
-    })
-});
+// $(function () {
+//     $('#inputcountry').autocomplete({
+//         source: countries
+//     })
+// });

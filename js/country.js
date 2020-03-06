@@ -19,3 +19,180 @@ let countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angu
     "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu",
     "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu",
     "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+let cities = ['Kiev', 'Kharkiv', 'Odessa', 'Dnieper', 'Donetsk', 'Zaporozhye', 'Lviv', 'Krivoy Rog', 'Nikolaev', 'Mariupol', 'Lugansk', 'Vinnytsia', 'Makeevka',
+    'Sevastopol', 'Simferopol', 'Kherson', 'Poltava', 'Chernihiv', 'Cherkasy', 'Zhytomyr', 'Amounts', 'Khmelnitsky', 'Chernivtsi', 'Gorlovka', 'Smooth', 'Kamenskoe',
+    'Ivano-Frankivsk', 'Kremenchug', 'Ternopil', 'Lutsk', 'Kramatorsk', 'Melitopol', 'Kerch', 'Slabyansk', 'Uzhhorod', 'Berdyansk', 'Alchevsk', 'Pavlograd', 'Severodonetsk',
+    'Evpatoria', 'Lysychansk', 'Kamyanets-Podilsky', 'Brovary'];
+
+function autocompleteCoutry(inp, arr) {
+    var currentFocus;
+    inp.addEventListener("input", function (e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false; }
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+                b = document.createElement("DIV");
+
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+
+                b.addEventListener("click", function (e) {
+
+                    inp.value = this.getElementsByTagName("input")[0].value;
+
+                    closeAllLists();
+                });
+                a.appendChild(b);
+            }
+        }
+    });
+
+    inp.addEventListener("keydown", function (e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+
+            currentFocus++;
+
+            addActive(x);
+        } else if (e.keyCode == 38) {
+            currentFocus--;
+            addActive(x);
+        } else if (e.keyCode == 13) {
+
+            e.preventDefault();
+            if (currentFocus > -1) {
+
+                if (x) x[currentFocus].click();
+            }
+        }
+    });
+    function addActive(x) {
+
+        if (!x) return false;
+
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+
+        x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+
+        for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+        }
+    }
+    function closeAllLists(elmnt) {
+
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    }
+
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
+
+
+autocompleteCoutry(document.querySelector('#inputcountry'), countries);
+autocompleteCity(document.querySelector('#inputcity'), cities);
+
+function autocompleteCity(inp, arr) {
+    var currentFocus;
+    inp.addEventListener("input", function (e) {
+        var a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false; }
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+                b = document.createElement("DIV");
+
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+
+                b.addEventListener("click", function (e) {
+
+                    inp.value = this.getElementsByTagName("input")[0].value;
+
+                    closeAllLists();
+                });
+                a.appendChild(b);
+            }
+        }
+    });
+
+    inp.addEventListener("keydown", function (e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+
+            currentFocus++;
+
+            addActive(x);
+        } else if (e.keyCode == 38) {
+            currentFocus--;
+            addActive(x);
+        } else if (e.keyCode == 13) {
+
+            e.preventDefault();
+            if (currentFocus > -1) {
+
+                if (x) x[currentFocus].click();
+            }
+        }
+    });
+    function addActive(x) {
+
+        if (!x) return false;
+
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+
+        x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+
+        for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+        }
+    }
+    function closeAllLists(elmnt) {
+
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+                x[i].parentNode.removeChild(x[i]);
+            }
+        }
+    }
+
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
