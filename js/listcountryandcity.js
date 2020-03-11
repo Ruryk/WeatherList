@@ -43,7 +43,7 @@ let cities = ["Alupka", "Alushta", "Armyansk", "Bakhchisaray", "Belogorsk", "Dzh
     "Tatarbunary", "Teplodar", "Southern", "Gadyach", "Globino", "Comb", "Karlivka", "Kremenchug", "Kobelyaki", "Horishni Plavni", "Lokhvytsya",
     "Lubny", "Mirgorod", "Piryatin", "Poltava", "Khorol", "Zavodske", "Berezne", "Dubno", "Dubrovytsya", "Zdolbunov", "Korets", "Kostopol",
     "Kuznetsovsk", "Sarny", "Buryn", "Hlukhiv", "Krolevets", "Konotop", "Romny", "Sumy", "Trostyanets",
-    "Shostka", "Berezhany", "Borshchev", "Buchach", "Zbarazh", "Zborov", "Kremenets", "Pochaiv", "Skalat", "Ternopil", "Terebovlya", "Chortkiv",
+    "Shostka", "Berezhany", "Borshchev", "Buchach", "Zbarazh", "Kremenets", "Pochaiv", "Skalat", "Ternopil", "Terebovlya", "Chortkiv",
     "Lozova", "Kharkiv", "Chuhuiv", "Berislav", "Henichesk", "Kakhovka", "Nova Kakhovka", "Skadovsk", "Kherson", "Tsyurupinsk", "Volochysk",
     "Derazhnya", "Izyaslav", "Krasilov", "Netishin", "Polonnoe", "Slavuta", "Starokonstantinov", "Khmelnitsky", "Shepetivka", "Vatutine",
     "Zhashkiv", "Zvenyhorodka", "Zolotonosha", "Kamenka", "Kanev", "Korsun-Shevchenkivskyy", "Monastery", "Uman", "Khrystynivka", "Cherkasy",
